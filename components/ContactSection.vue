@@ -39,7 +39,12 @@
 		}
 		.contact {
 			display: flex;
+			flex-direction: column;
 			gap: 2rem;
+
+			@media(min-width: 770px) {
+				flex-direction: row;
+			}
 			
 			& > section {
 				display: flex;

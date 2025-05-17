@@ -1,18 +1,33 @@
 <script setup>
+	// @todo link na registraciu
+	// @todo animacie
+	// @todo logo
+	// @todo nefunguje scroll pri navigacii na mobile
+
 	import 'primeicons/primeicons.css'
 
 	const i18n = useI18n()
 	const { data: LayoutGlobal }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/layout/global`).first())
+
+	const { data: headerapp }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/layout/header-app`).first())
+
+	import SurvivorSection from '@/components/SurvivorSection'
+	import TurzovskySurvivorSection from '@/components/TurzovskySurvivorSection'
+	import RegistrationSection from '@/components/RegistrationSection'
+	import ContactSection from '@/components/ContactSection'
+	const sectionsMap = {
+		survivor: SurvivorSection,
+		turzovskysurvivor: TurzovskySurvivorSection,
+		registration: RegistrationSection,
+		contact: ContactSection,
+	}
 </script>
 
 <template>
 	<main :style="`background-image: url('${useRuntimeConfig().app.baseURL}${LayoutGlobal.body.background}')`">
 		<HeaderApp />
 		<HomeSection />
-		<SurvivorSection />
-		<TurzovskySurvivorSection />
-		<RegistrationSection />
-		<ContactSection />
+		<component :is="sectionsMap[name]" v-for="name in headerapp.body.menu" :key="name" />
 		<!-- data-aos="fade-up" 
 			data-aos-delay="200"
   			data-aos-duration="1000"  -->

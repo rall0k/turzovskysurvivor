@@ -13,6 +13,7 @@
 	const toggle = (event) => {
 		menu.value.toggle(event)
 	}
+	const router = useRouter()
 
 	const navigation = computed(() => {
 		if (!HeaderApp.value?.body?.menu) return []
@@ -22,7 +23,8 @@
 				items: HeaderApp.value.body.menu.map((item) => ({
 					...sections[item].value.body,
 					command: () => {
-						navigateTo(`#${item.anchor}`)
+						router.replace({ hash: `#${sections[item].value.body.anchor}` })
+						// navigateTo(`#${sections[item].value.body.anchor}`)
 					}
 				}))
 			}
@@ -89,6 +91,7 @@
 		display: none;
 	}
 	.p-menu-item-label {
+		text-shadow: none;
 		font-size: 1.4rem;
 		color: #444;
 	}
