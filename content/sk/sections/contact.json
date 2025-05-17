@@ -1,6 +1,13 @@
 {
+	"anchor": "contact",
 	"title": "Neváhaj nás kontaktovať",
-	"text": "Máte otázky alebo potrebujete viac informácií? Neváhajte nás kontaktovať.",
+	"text": "Máš otázky alebo potrebuješ viac informácií? Neváhaj nás kontaktovať.",
+	"colors": {
+		"background": {
+			"center": "rgb(242, 141, 40)",
+			"edge": "rgba(0, 0, 0, .7)"
+		}
+	},
 	"contact": [
 		{
 			"icon": "pi pi-phone",

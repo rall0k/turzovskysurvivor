@@ -4,7 +4,7 @@
 </script>
 
 <template>
-	<section class="container">
+	<section class="container" :id="ContactSection.body.anchor" :style="`background: radial-gradient(circle, ${ContactSection.body.colors.background.center}, ${ContactSection.body.colors.background.edge})`">
 		<h1>{{ ContactSection.body.title }}</h1>
 		<p class="text">{{ ContactSection.body.text }}</p>
 		<section class="contact">

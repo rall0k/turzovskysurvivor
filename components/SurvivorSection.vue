@@ -5,7 +5,7 @@
 </script>
 
 <template>
-	<section class="container" id="survivor">
+	<section class="container" :id="SurvivorSection.body.anchor" :style="`background: radial-gradient(circle, ${SurvivorSection.body.colors.background.center}, ${SurvivorSection.body.colors.background.edge})`">
 		<section class="text">
 			<h1>{{ SurvivorSection.body.title }}</h1>
 			<p v-for="paragraph in SurvivorSection.body.text" :key="paragraph">{{ paragraph }}</p>

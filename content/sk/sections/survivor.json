@@ -1,6 +1,12 @@
 {
+	"anchor": "survivor",
 	"title": "Čo je survivor?",
-	"background": "",
+	"colors": {
+		"background": {
+			"center": "rgb(178, 34, 34)",
+			"edge": "rgba(0, 0, 0, .7)"
+		}
+	},
 	"text": [
 		"Survivor je ikonická reality šou, ktorá sa stala fenoménom po celom svete. Jej koncept je jednoduchý, no zároveň náročný – skupina súťažiacich je vysadená v odľahlej a často nepriateľskej prírode, kde musia prežiť bez akéhokoľvek pohodlia moderného sveta. Bez jedla, bez strechy nad hlavou, iba s tým, čo si dokážu postaviť, získať alebo vyhrať vo výzvach.",
 		"Účastníci sú rozdelení do kmeňov a postupne súťažia v rôznych fyzických aj mentálnych výzvach. Výhrou si môžu zabezpečiť nielen odmenu alebo jedlo, ale aj imunitu – ochranu pred vyradením na kmeňovej rade. Každých pár dní jeden zo súťažiacich vypadne na základe hlasovania ostatných. To znamená, že prežitie v hre nezávisí len od fyzickej sily, ale najmä od stratégie, diplomacie a schopnosti vybudovať si aliancie a dôveru.",

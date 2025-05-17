@@ -1,11 +1,10 @@
 <script setup>
 	const i18n = useI18n()
-	const container = ref(null)
 	const { data: HomeSection }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/home`).first())
 </script>
 
 <template>
-	<section ref="container" class="container">
+	<section id="home" class="container">
 		<section class="text-button">
 			<section class="text">
 				<p v-for="paragraph in HomeSection.body.text" :key="paragraph">{{ paragraph }}</p>

@@ -4,7 +4,7 @@
 </script>
 
 <template>
-	<section class="container">
+	<section class="container" :id="TurzovskySurvivorSection.body.anchor" :style="`background: radial-gradient(circle, ${TurzovskySurvivorSection.body.colors.background.center}, ${TurzovskySurvivorSection.body.colors.background.edge})`">
 		<section class="sections">
 			<section class="section" v-for="section in TurzovskySurvivorSection.body.sections" :key="section">
 				<h1>{{ section.title }}</h1>

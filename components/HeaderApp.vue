@@ -36,17 +36,44 @@
 	onUnmounted(() => {
 		window.removeEventListener('scroll', handleScroll)
 	})
+
+	const activeSection = ref(null)
+
+	const onScroll = () => {
+		const sections = [ 'survivor', 'turzovskysurvivor', 'registration', 'contact' ]
+		for (const id of sections) {
+			const el = document.getElementById(id)
+			if (!el) continue
+			const rect = el.getBoundingClientRect()
+			// kontrolujeme, či je časť sekcie blízko hornej časti viewportu
+			if (rect.top <= 110 && rect.bottom >= 110) {
+				activeSection.value = id
+				break
+			}
+			else {
+				activeSection.value = null
+			}
+		}
+	}
+	onMounted(() => {
+		window.addEventListener('scroll', onScroll)
+		onScroll() // kontrola hneď po načítaní
+	})
+
+	onBeforeUnmount(() => {
+		window.removeEventListener('scroll', onScroll)
+	})
 </script>
 
 <template>
 	<header :class="{'header-app': true, 'scrolled': isScrolled}">
-		<a href="" class="logo">Turzovský Survivor</a>
+		<a href="#home" class="logo">Turzovský Survivor</a>
 
 		<Button class="hamburger-menu-icon" type="alternate" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
 		<Menu ref="menu" id="overlay_menu" :model="navigation" :popup="true" />
 
 		<nav>
-			<a :href="`#${item.anchor}`" v-for="item in navigation[0].items" :key="item">{{ item.label }}</a>
+			<a :href="`#${item.anchor}`" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</a>
 		</nav>
 	</header>
 </template>

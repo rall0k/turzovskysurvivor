@@ -1,4 +1,11 @@
 {
+	"anchor": "registration",
+	"colors": {
+		"background": {
+			"center": "rgba(93, 42, 122, 1)",
+			"edge": "rgba(0, 0, 0, .7)"
+		}
+	},
 	"title": "zaregistruj sa hneď!!",
 	"text": [
 		"Nezmeškaj príležitosť stať sa súčasťou Turzovského Survivora – jedinečného dobrodružstva, ktoré preverí tvoju silu, výdrž, logické myslenie aj schopnosť zvládať stres a tlak.",

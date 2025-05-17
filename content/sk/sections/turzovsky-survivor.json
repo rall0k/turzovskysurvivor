@@ -1,4 +1,11 @@
 {
+	"anchor": "turzovskysurvivor",
+	"colors": {
+		"background": {
+			"center": "rgb(0, 119, 182)",
+			"edge": "rgba(0, 0, 0, .7)"
+		}
+	},
 	"sections": [
 		{
 			"title": "Turzovský survivor",
@@ -12,7 +19,7 @@
 		{
 			"title": "Máš na to? Prihlás sa a dokáž to!",
 			"text": [
-				"Myslíš si, že máš odvahu, silu a rozum zvládnuť všetko, čo ti pripravíme? Chceš zažiť deň plný adrenalínu, výziev a nezabudnuteľnej atmosféry? Nečakaj, kým ti to niekto povie – dokáž to sám! Prihlás sa na Turzovský Survivor a staň sa súčasťou hry, kde sa počíta najmä tvoje odhodlanie, šikovnosť a vytrvalosť. Čakajú ťa napínavé výzvy, super ľudia a finále, ktoré preverí tvoje schopnosti naplno. Nezáleží, či si športovec, hlavička, dobrodruh alebo len zvedavý – Survivor je pre každého, kto sa nebojí výzvy!",
+				"Myslíš si, že máš odvahu, silu a rozum zvládnuť všetko, čo ti pripravíme? Chceš zažiť deň plný adrenalínu, výziev a nezabudnuteľnej atmosféry? Nečakaj! Prihlás sa na Turzovský Survivor a staň sa súčasťou hry, kde sa počíta najmä tvoje odhodlanie, šikovnosť a vytrvalosť. Čakajú ťa napínavé výzvy, super ľudia a finále, ktoré preverí tvoje schopnosti naplno. Nezáleží, či si športovec, hlavička, dobrodruh alebo len zvedavý – Survivor je pre každého, kto sa nebojí výzvy!",
 				"Miesta sú obmedzené – tak sa prihlás teraz a ukáž, čo v tebe je!"
 			]
 		}

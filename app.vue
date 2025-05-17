@@ -13,7 +13,6 @@
 		<TurzovskySurvivorSection />
 		<RegistrationSection />
 		<ContactSection />
-
 		<!-- data-aos="fade-up" 
 			data-aos-delay="200"
   			data-aos-duration="1000"  -->
@@ -21,12 +20,31 @@
 </template>
 
 <style>
-	:root {
-		--color01: white;
-	}
+	@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
 	@font-face {
 		font-family: 'SurvivorFontSK';
 		src: url('SurvivorFontSK.ttf') format('truetype');
+	}
+	:root {
+		--color01: white;
+	}
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	html {
+		scroll-behavior: smooth;
+		color: #444;
+		text-shadow: 1px 1px black;
+		letter-spacing: 2px;
+		font-size: 16px;
+		line-height: 2rem;
+		font-family: 'SurvivorFontSK', sans-serif;
+
+		body {
+			font-size: 1.5rem;
+		}	
 	}
 	main {
 		min-height: 100vh;
@@ -54,7 +72,7 @@
 		}
 	}
 	.container {
-		scroll-margin-top: 70px;
+		scroll-margin-top: 108px;
 		min-height: 100vh;
 		padding: 5rem;
 		color: var(--color01);
@@ -63,28 +81,5 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		/* background: red; */
-
-		&:nth-child(odd) {
-			/* background: blue; */
-		}
-	}
-	* {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
-	html {
-		scroll-behavior: smooth;
-		color: #444;
-		text-shadow: 1px 1px black;
-		letter-spacing: 2px;
-		font-size: 16px;
-		line-height: 2rem;
-		font-family: 'SurvivorFontSK', sans-serif;
-
-		body {
-			font-size: 1.5rem;
-		}	
 	}
 </style>
