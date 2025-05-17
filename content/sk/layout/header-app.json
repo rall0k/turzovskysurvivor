@@ -1,0 +1,21 @@
+{
+	"logo": "",
+	"menu": [
+		{
+			"label": "Survivor",
+			"anchor": "survivor"
+		},
+		{
+			"label": "Turzovský Survivor",
+			"anchor": "turzovskysurvivor"
+		},
+		{
+			"label": "Registrácia",
+			"anchor": "registration"
+		},
+		{
+			"label": "Kontakt",
+			"anchor": "contact"
+		}
+	]
+}
