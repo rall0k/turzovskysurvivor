@@ -1,5 +1,6 @@
 {
 	"anchor": "registration",
+	"label": "Registrácia",
 	"colors": {
 		"background": {
 			"center": "rgba(93, 42, 122, 1)",

@@ -2,6 +2,12 @@
 	const i18n = useI18n()
 	
 	const { data: HeaderApp }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/layout/header-app`).first())
+
+	const { data: survivor }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/survivor`).first())
+	const { data: turzovskysurvivor }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/turzovsky-survivor`).first())
+	const { data: registration }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/registration`).first())
+	const { data: contact }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/contact`).first())
+	let sections = { survivor, turzovskysurvivor, registration, contact }
 	
 	const menu = ref()
 	const toggle = (event) => {
@@ -14,7 +20,7 @@
 		return [
 			{
 				items: HeaderApp.value.body.menu.map((item) => ({
-					...item,
+					...sections[item].value.body,
 					command: () => {
 						navigateTo(`#${item.anchor}`)
 					}
