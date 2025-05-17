@@ -1,0 +1,24 @@
+{
+	"sections": [
+		{
+			"title": "Turzovský survivor",
+			"text": [
+				"Na Turzovskom Survivore sa stretne 10 odvážnych súťažiacich, ktorí budú rozdelení do dvoch kmeňov. Tieto kmene proti sebe nastúpia v sérii výziev, ktoré preveria ich fyzickú kondíciu, logické myslenie, šikovnosť aj psychickú odolnosť. Kmeň, ktorý ako prvý získa tri víťazstvá, zabezpečí si postup do finále.",
+				"Na rozdiel od klasickej televíznej verzie sa u nás nehrá sociálna hra – nezakladajú sa aliancie, nevylučuje sa hlasovaním. Namiesto toho rozhodujú schopnosti a výkon v súťažiach. Každý hrá sám za seba a postúpi ten, kto ukáže, že má silu, rozum a odvahu.",
+				"Po postupe do finále už súťažiaci z víťazného kmeňa zabojujú jednotlivo. V každej výzve vypadáva hráč, ktorý úlohu dokončí ako posledný. Tento proces pokračuje, až kým nezostanú poslední dvaja finalisti.",
+				"Veľké finále preverí ich zručnosť – záverečnou výzvou je klasické rozloženie ohňa pomocou kresadla. Kto ako prvý založí oheň a prepáli povraz, stáva sa víťazom Turzovského Survivora!"
+			]
+		},
+		{
+			"title": "Máš na to? Prihlás sa a dokáž to!",
+			"text": [
+				"Myslíš si, že máš odvahu, silu a rozum zvládnuť všetko, čo ti pripravíme? Chceš zažiť deň plný adrenalínu, výziev a nezabudnuteľnej atmosféry? Nečakaj, kým ti to niekto povie – dokáž to sám! Prihlás sa na Turzovský Survivor a staň sa súčasťou hry, kde sa počíta najmä tvoje odhodlanie, šikovnosť a vytrvalosť. Čakajú ťa napínavé výzvy, super ľudia a finále, ktoré preverí tvoje schopnosti naplno. Nezáleží, či si športovec, hlavička, dobrodruh alebo len zvedavý – Survivor je pre každého, kto sa nebojí výzvy!",
+				"Miesta sú obmedzené – tak sa prihlás teraz a ukáž, čo v tebe je!"
+			]
+		}
+	],
+	"button": {
+		"label": "Registrácia",
+		"url": ""
+	}
+}

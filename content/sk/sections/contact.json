@@ -1,0 +1,19 @@
+{
+	"title": "Neváhaj nás kontaktovať",
+	"text": "Máte otázky alebo potrebujete viac informácií? Neváhajte nás kontaktovať.",
+	"contact": [
+		{
+			"icon": "pi pi-phone",
+			"phone": "+421 915 236 547"
+		},
+		{
+			"icon": "pi pi-envelope",
+			"mail": "info@spgl.sk"
+		},
+		{
+			"icon": "pi pi-facebook",
+			"label": "Turzov",
+			"url": "https://www.facebook.com/profile.php?id=61552047947591"
+		}
+	]
+}

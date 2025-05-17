@@ -1,11 +1,23 @@
 <script setup>
 	import 'primeicons/primeicons.css'
+
+	const i18n = useI18n()
+	const { data: LayoutGlobal }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/layout/global`).first())
 </script>
 
 <template>
-	<HeaderApp />
-	<HomeSection />
-	<SurvivorSection />
+	<main :style="`background-image: url('${useRuntimeConfig().app.baseURL}${LayoutGlobal.body.background}')`">
+		<HeaderApp />
+		<HomeSection />
+		<SurvivorSection />
+		<TurzovskySurvivorSection />
+		<RegistrationSection />
+		<ContactSection />
+
+		<!-- data-aos="fade-up" 
+			data-aos-delay="200"
+  			data-aos-duration="1000"  -->
+	</main>
 </template>
 
 <style>
@@ -15,6 +27,17 @@
 	@font-face {
 		font-family: 'SurvivorFontSK';
 		src: url('SurvivorFontSK.ttf') format('truetype');
+	}
+	main {
+		min-height: 100vh;
+		background-position: center center;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	h1 {
+		letter-spacing: 5px;
+		font-size: 3rem;
+		text-align: center;
 	}
 	.registration-button {
 		background: rgba(255,255,255,.5);
@@ -31,11 +54,20 @@
 		}
 	}
 	.container {
+		scroll-margin-top: 70px;
 		min-height: 100vh;
 		padding: 5rem;
 		color: var(--color01);
 		background-position: center center;
 		background-size: cover;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		/* background: red; */
+
+		&:nth-child(odd) {
+			/* background: blue; */
+		}
 	}
 	* {
 		box-sizing: border-box;
@@ -43,7 +75,10 @@
 		padding: 0;
 	}
 	html {
+		scroll-behavior: smooth;
 		color: #444;
+		text-shadow: 1px 1px black;
+		letter-spacing: 2px;
 		font-size: 16px;
 		line-height: 2rem;
 		font-family: 'SurvivorFontSK', sans-serif;

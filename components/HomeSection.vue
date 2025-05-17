@@ -1,11 +1,11 @@
 <script setup>
 	const i18n = useI18n()
-	
-	const { data: HomeSection }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/home-section`).first())
+	const container = ref(null)
+	const { data: HomeSection }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/home`).first())
 </script>
 
 <template>
-	<section class="container" :style="`background-image: url('${useRuntimeConfig().app.baseURL}${HomeSection.body.background}')`">
+	<section ref="container" class="container">
 		<section class="text-button">
 			<section class="text">
 				<p v-for="paragraph in HomeSection.body.text" :key="paragraph">{{ paragraph }}</p>

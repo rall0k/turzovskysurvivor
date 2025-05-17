@@ -26,7 +26,6 @@
 	const isScrolled = ref(false)
 
 	const handleScroll = () => {
-		console.log(window.scrollY)
 		isScrolled.value = window.scrollY > 10
 	}
 
@@ -64,6 +63,7 @@
 
 <style scoped>
 	.header-app {
+		z-index: 20;
 		position: absolute;
 		padding: 2rem 3rem;
 		display: flex;
