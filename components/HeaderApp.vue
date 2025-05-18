@@ -54,7 +54,7 @@
 			if (!el) continue
 			const rect = el.getBoundingClientRect()
 			// kontrolujeme, či je časť sekcie blízko hornej časti viewportu
-			if (rect.top <= 108 && rect.bottom >= 108) {
+			if (rect.top <= 110 && rect.bottom >= 110) {
 				activeSection.value = id
 				history.replaceState(null, null, `#${id}`)
 				break
@@ -143,6 +143,7 @@
 
 			@media(min-width: 1200px) {
 				display: flex;
+				gap: .3rem;
 			}
 
 			a {
