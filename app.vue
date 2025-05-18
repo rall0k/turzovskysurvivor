@@ -1,7 +1,4 @@
 <script setup>
-	// @todo logo
-	// @todo SEO texty
-
 	import 'primeicons/primeicons.css'
 
 	const i18n = useI18n()
@@ -13,6 +10,12 @@
 			{ name: 'description', content: Global.value.body.seo.description },
 			{ name: 'keywords', content: Global.value.body.seo.keywords },
 		],
+		script: [
+			{
+				src: 'https://kit.fontawesome.com/e3468e6c20.js',
+				crossorigin: 'anonymous'
+			}
+		]
 	})
 
 	useSeoMeta({

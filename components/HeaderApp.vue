@@ -1,6 +1,8 @@
 <script setup>
 	const i18n = useI18n()
-	
+
+	const { data: Global }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/global`).first())
+
 	const { data: HeaderApp }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/layout/header-app`).first())
 
 	const { data: survivor }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/survivor`).first())
@@ -77,7 +79,10 @@
 
 <template>
 	<header :class="{'header-app': true, 'scrolled': isScrolled}">
-		<a href="#home" class="logo">Turzovský Survivor</a>
+		<a href="#home" class="logo">
+			 <i class="fa-brands fa-gripfire"></i>
+			 {{ Global.body.name }}
+		</a>
 
 		<Button class="hamburger-menu-icon" type="alternate" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
 		<Menu ref="menu" id="overlay_menu" :model="navigation" :popup="true" />
@@ -100,6 +105,13 @@
 </style>
 
 <style scoped>
+	@keyframes flame {
+		0%   { color: #ff6b6b; }   /* svetločervená */
+		25%  { color: #ff922b; }   /* oranžová */
+		50%  { color: #ffd43b; }   /* žltá */
+		75%  { color: #ff922b; }   /* späť oranžová */
+		100% { color: #ff6b6b; }   /* späť svetločervená */
+	}
 	.header-app {
 		z-index: 20;
 		position: absolute;
@@ -128,7 +140,16 @@
 			font-size: 1.4rem;
 			color: var(--color01);
 		}
-		.logo {}
+		.logo {
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+			
+			.fa-gripfire {
+				font-size: 2rem;
+				animation: flame 3s infinite ease-in-out;
+			}
+		}
 		.hamburger-menu-icon {
 			background: none;
 			border: none;
