@@ -10,6 +10,9 @@
 			{ name: 'description', content: Global.value.body.seo.description },
 			{ name: 'keywords', content: Global.value.body.seo.keywords },
 		],
+		link: [
+			{ rel: 'icon', type: 'image/x-icon', href: `${useRuntimeConfig().app.baseURL}/favicon.ico` }
+		],
 		script: [
 			{
 				src: 'https://kit.fontawesome.com/e3468e6c20.js',
