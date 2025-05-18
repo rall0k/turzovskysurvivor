@@ -1,5 +1,4 @@
 <script setup>
-
 	import 'primeicons/primeicons.css'
 
 	const i18n = useI18n()
