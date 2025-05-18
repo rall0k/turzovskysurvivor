@@ -70,12 +70,11 @@
 				p {
 					.registration-countdown {
 						display: inline-block;
-						background-color: var(--color01);
-						color: #444;
 						text-shadow: none;
-						padding: .5rem 1rem;
-						border-radius: .2rem;
-						font-size: 2rem;
+						background: var(--color01);
+						color: #444;
+						padding: .2rem .5rem;
+						border-radius: 2px;
 					}
 				}
 				.registration-button {
