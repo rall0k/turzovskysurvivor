@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 	},
 	compatibilityDate: '2025-05-15',
 	devtools: { enabled: true },
-	modules: ['@nuxtjs/i18n', '@primevue/nuxt-module', '@nuxt/content', '@vueuse/motion/nuxt', 'nuxt-aos'],
+	modules: ['@nuxtjs/i18n', '@primevue/nuxt-module', '@nuxt/content', 'nuxt-aos'],
 	primevue: {
 		options: {
 			theme: {
