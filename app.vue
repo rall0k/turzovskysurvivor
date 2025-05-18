@@ -2,12 +2,12 @@
 	// @todo link na registraciu
 	// @todo animacie
 	// @todo logo
-	// @todo nefunguje scroll pri navigacii na mobile
+	// @todo pridat datum a cas a odpocitavadlo
 
 	import 'primeicons/primeicons.css'
 
 	const i18n = useI18n()
-	const { data: LayoutGlobal }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/layout/global`).first())
+	const { data: Global }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/global`).first())
 
 	const { data: headerapp }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/layout/header-app`).first())
 
@@ -24,7 +24,7 @@
 </script>
 
 <template>
-	<main :style="`background-image: url('${useRuntimeConfig().app.baseURL}${LayoutGlobal.body.background}')`">
+	<main :style="`background-image: url('${useRuntimeConfig().app.baseURL}${Global.body.background}')`">
 		<HeaderApp />
 		<HomeSection />
 		<component :is="sectionsMap[name]" v-for="name in headerapp.body.menu" :key="name" />

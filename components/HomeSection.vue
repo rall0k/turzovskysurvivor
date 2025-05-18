@@ -1,6 +1,10 @@
 <script setup>
 	const i18n = useI18n()
 	const { data: HomeSection }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/home`).first())
+	const { data: Global }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/global`).first())
+
+	const { countdown: eventCountdown } = useCountdown(Global.value.body.eventDatetime)
+	const { countdown: registrationCountdown } = useCountdown(Global.value.body.registrationDatetime)
 </script>
 
 <template>
