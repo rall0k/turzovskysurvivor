@@ -1,6 +1,6 @@
 <script setup>
-	// @todo animacie
 	// @todo logo
+	// @todo SEO texty
 
 	import 'primeicons/primeicons.css'
 
@@ -26,9 +26,6 @@
 		<HeaderApp />
 		<HomeSection />
 		<component :is="sectionsMap[name]" v-for="name in headerapp.body.menu" :key="name" />
-		<!-- data-aos="fade-up" 
-			data-aos-delay="200"
-  			data-aos-duration="1000"  -->
 	</main>
 </template>
 

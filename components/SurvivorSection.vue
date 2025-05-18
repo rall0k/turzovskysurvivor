@@ -7,11 +7,11 @@
 <template>
 	<section class="container" :id="SurvivorSection.body.anchor" :style="`background: radial-gradient(circle, ${SurvivorSection.body.colors.background.center}, ${SurvivorSection.body.colors.background.edge})`">
 		<section class="text">
-			<h1>{{ SurvivorSection.body.title }}</h1>
-			<p v-for="paragraph in SurvivorSection.body.text" :key="paragraph">{{ paragraph }}</p>
+			<h1 data-aos="fade-left" data-aos-duration="1500">{{ SurvivorSection.body.title }}</h1>
+			<p v-for="paragraph in SurvivorSection.body.text" :key="paragraph" data-aos="fade-right" data-aos-duration="1500">{{ paragraph }}</p>
 		</section>
 		<section class="challenges">
-			<h1>{{ SurvivorSection.body.subtitle }}</h1>
+			<h1 data-aos="fade-left" data-aos-duration="1500">{{ SurvivorSection.body.subtitle }}</h1>
 			<section class="video">
 				<iframe v-for="video in SurvivorSection.body.video" :key="video"
 					:src="`https://www.youtube.com/embed/${video}`"
@@ -19,6 +19,7 @@
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen
+					data-aos="fade" data-aos-duration="1500"
 				></iframe>
 			</section>
 		</section>

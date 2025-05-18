@@ -9,18 +9,18 @@
 	<section class="container" :id="TurzovskySurvivorSection.body.anchor" :style="`background: radial-gradient(circle, ${TurzovskySurvivorSection.body.colors.background.center}, ${TurzovskySurvivorSection.body.colors.background.edge})`">
 		<section class="sections">
 			<section class="section" v-for="section in TurzovskySurvivorSection.body.sections" :key="section">
-				<h1>{{ section.title }}</h1>
+				<h1 data-aos="fade-left" data-aos-duration="1500">{{ section.title }}</h1>
 				<article class="text">
-					<p v-for="paragraph in section.text" :key="paragraph">{{ paragraph }}</p>
+					<p v-for="paragraph in section.text" :key="paragraph" data-aos="fade-right" data-aos-duration="1500">{{ paragraph }}</p>
 				</article>
 			</section>
-			<section class="section" v-if="Global.body.registrationAllow && registrationCountdown">
+			<section class="section" v-if="Global.body.registrationAllow && registrationCountdown" data-aos="fade-right" data-aos-duration="1500">
 				<div class="text registration-text">
 					{{ TurzovskySurvivorSection.body.registrationText }} <span>{{ registrationCountdown }}</span>
 				</div>
 			</section>
 		</section>
-		<a :href="Global.body.registrationButton.url" class="registration-button" v-if="Global.body.registrationAllow && registrationCountdown">{{ Global.body.registrationButton.label }}</a>
+		<a  data-aos="fade" data-aos-duration="1500" :href="Global.body.registrationButton.url" class="registration-button" v-if="Global.body.registrationAllow && registrationCountdown">{{ Global.body.registrationButton.label }}</a>
 	</section>
 </template>
 
