@@ -2,6 +2,7 @@
 	const i18n = useI18n()
 	const { data: TurzovskySurvivorSection }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/turzovsky-survivor`).first())
 	const { data: Global }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/global`).first())
+	const { countdown: registrationCountdown } = useCountdown(Global.value.body.registrationDatetime)
 </script>
 
 <template>
@@ -14,7 +15,13 @@
 				</article>
 			</section>
 		</section>
-		<a :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
+		<section class="registration-container">
+			<div class="text">
+				{{ TurzovskySurvivorSection.body.registrationText }}
+				<span>{{ registrationCountdown }}</span>
+			</div>
+			<a :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
+		</section>
 	</section>
 </template>
 
@@ -45,8 +52,12 @@
 				}
 			}
 		}
-		.registration-button {
-			align-self: center;
+		.registration-container {
+			display: flex;
+			flex-direction: column;
+			align-self: start;
+			gap: 2rem;
+			align-items: start;
 		}
 	}
 </style>

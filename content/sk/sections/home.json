@@ -3,9 +3,6 @@
 		"Zaži nezabudnuteľné dobrodružstvo plné výziev, stratégie a tímovej spolupráce! Turzovský Survivor je jedinečné podujatie inšpirované svetoznámou reality šou, kde otestuješ svoje fyzické a mentálne schopnosti.",
 		"Pridaj sa k nám a staň sa súčasťou nezabudnuteľného zážitku! Registrácia je otvorená pre všetkých odvážnych dobrodruhov."
 	],
-	"button": {
-		"label": "Registrácia",
-		"url": ""
-	},
+	"registrationText": "Ponáhľaj sa na registráciu ti ostáva už len",
 	"photo": "/sections/home/SurvivorMan.png"
 }

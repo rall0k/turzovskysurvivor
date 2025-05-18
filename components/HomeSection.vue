@@ -8,14 +8,24 @@
 </script>
 
 <template>
+	{{ registrationAllow }}
 	<section id="home" class="container">
 		<section class="text-button">
 			<section class="text">
 				<p v-for="paragraph in HomeSection.body.text" :key="paragraph">{{ paragraph }}</p>
 			</section>
-			<a :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
+			<section class="registration-container" v-if="Global.body.registrationAllow && registrationCountdown">
+				<p>{{ HomeSection.body.registrationText }} <span class="registration-countdown">{{ registrationCountdown }}</span></p>
+				<a :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
+			</section>
 		</section>
-		<img :src="HomeSection.body.photo" alt="">
+		<section class="event-container">
+			<img :src="HomeSection.body.photo" alt="">
+			<section class="event-datetime-countdown" v-if="eventCountdown">
+				<div class="event-datetime">{{ useDatetimeFormater(Global.body.eventDatetime) }}</div>
+				<div class="event-countdown">{{ eventCountdown }}</div>
+			</section>
+		</section>
 	</section>
 </template>
 
@@ -24,13 +34,13 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 2rem;
+		gap: 4rem;
 		padding: 2rem;
 
 		@media(min-width: 600px) {
 			padding: 5rem;
 		}
-		@media(min-width: 1200px) {
+		@media(min-width: 1400px) {
 			flex-direction: row;
 		}
 
@@ -41,7 +51,7 @@
 			gap: 3rem;
 			order: 2;
 
-			@media(min-width: 1200px) {
+			@media(min-width: 1400px) {
 				order: 1;
 			}
 			
@@ -52,11 +62,54 @@
 
 				p {}
 			}
+			.registration-container {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+
+				p {
+					.registration-countdown {
+						display: inline-block;
+						background-color: var(--color01);
+						color: #444;
+						text-shadow: none;
+						padding: .5rem 1rem;
+						border-radius: .2rem;
+						font-size: 2rem;
+					}
+				}
+				.registration-button {
+					align-self: start;
+				}
+			}
 		}
-		img {
-			width: clamp(250px, 50vw, 500px);
-			@media(min-width: 1200px) {
+		.event-container {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			align-items: center;
+
+			@media(min-width: 1400px) {
 				order: 2;
+			}
+			img {
+				width: clamp(250px, 50vw, 500px);
+			}
+			.event-datetime-countdown {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				align-items: center;
+				
+				.event-datetime {
+					font-size: 3rem;
+					@media(min-width: 600px) {
+						font-size: 4rem;
+					}
+				}
+				.event-countdown {
+					font-size: 2rem;
+				}
 			}
 		}
 	}
