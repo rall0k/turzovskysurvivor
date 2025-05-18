@@ -98,6 +98,7 @@
 		}
 	}
 	.container {
+		overflow: hidden;
 		scroll-margin-top: 108px;
 		min-height: 100vh;
 		padding: 5rem;

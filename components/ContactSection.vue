@@ -7,7 +7,7 @@
 	<section class="container" :id="ContactSection.body.anchor" :style="`background: radial-gradient(circle, ${ContactSection.body.colors.background.center}, ${ContactSection.body.colors.background.edge})`">
 		<h1 data-aos="fade-left" data-aos-duration="1500">{{ ContactSection.body.title }}</h1>
 		<p class="text" data-aos="fade-right" data-aos-duration="1500">{{ ContactSection.body.text }}</p>
-		<section class="contact" data-aos="fade" data-aos-duration="1500">
+		<section class="contact" data-aos="fade-right" data-aos-duration="1500">
 			<section v-for="item in ContactSection.body.contact" :key="item">
 				<a :href="`mailto:${item.mail}`" class="item" v-if="item.mail">
 					<span :class="item.icon"></span>
