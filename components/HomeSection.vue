@@ -19,7 +19,7 @@
 			</section>
 		</section>
 		<section class="event-container">
-			{{ `${useRuntimeConfig().app.baseURL}${HomeSection.body.photo}` }}
+			<!-- {{ `${useRuntimeConfig().app.baseURL}${HomeSection.body.photo}` }} -->
 			<img :src="`${useRuntimeConfig().app.baseURL}${HomeSection.body.photo}`" alt="">
 			<section class="event-datetime-countdown" v-if="eventCountdown">
 				<div class="event-datetime">{{ useDatetimeFormater(Global.body.eventDatetime) }}</div>
