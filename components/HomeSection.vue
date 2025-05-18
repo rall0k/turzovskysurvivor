@@ -8,7 +8,6 @@
 </script>
 
 <template>
-	{{ registrationAllow }}
 	<section id="home" class="container">
 		<section class="text-button">
 			<section class="text">

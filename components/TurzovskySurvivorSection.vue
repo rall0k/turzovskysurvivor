@@ -14,14 +14,13 @@
 					<p v-for="paragraph in section.text" :key="paragraph">{{ paragraph }}</p>
 				</article>
 			</section>
+			<section class="section" v-if="Global.body.registrationAllow && registrationCountdown">
+				<div class="text registration-text">
+					{{ TurzovskySurvivorSection.body.registrationText }} <span>{{ registrationCountdown }}</span>
+				</div>
+			</section>
 		</section>
-		<section class="registration-container">
-			<div class="text">
-				{{ TurzovskySurvivorSection.body.registrationText }}
-				<span>{{ registrationCountdown }}</span>
-			</div>
-			<a :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
-		</section>
+		<a :href="Global.body.registrationButton.url" class="registration-button" v-if="Global.body.registrationAllow && registrationCountdown">{{ Global.body.registrationButton.label }}</a>
 	</section>
 </template>
 
@@ -35,7 +34,7 @@
 		.sections {
 			display: flex;
 			flex-direction: column;
-			gap: 4rem;
+			gap: 2rem;
 
 			.section {
 				display: flex;
@@ -48,16 +47,24 @@
 					flex-direction: column;
 					gap: 2rem;
 
+					&.registration-text {
+						display: inline-block;
+						
+						span {
+							text-shadow: none;
+							background: var(--color01);
+							color: #444;
+							padding: .2rem .5rem;
+							border-radius: 2px;
+						}
+					}
+
 					p {}
 				}
 			}
 		}
-		.registration-container {
-			display: flex;
-			flex-direction: column;
-			align-self: start;
-			gap: 2rem;
-			align-items: start;
+		.registration-button {
+			align-self: center;
 		}
 	}
 </style>

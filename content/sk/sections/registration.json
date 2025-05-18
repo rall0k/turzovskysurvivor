@@ -15,8 +15,9 @@
 		"🔥 Neotáľaj – počet miest je obmedzený.",
 		"Klikni na registračné tlačidlo a pridaj sa medzi tých, ktorí si naozaj trúfajú!"
 	],
-	"button": {
-		"label": "Registrácia",
-		"url": ""
+	"registrationText": "Pozor!! Čas na registráciu sa kráti. Ostáva Ti už len",
+	"registrationDisabled": {
+		"title": "Registrácia je pozastavená",
+		"text": "Je nám ľúto ale momentálne je registrácia pozastavená. Turzovský Survivor realizujeme zvyčajne v letných mesiacoch na prelome júl/august. Registrácia je zvyčajne dostupná máj - jún. Sleduj našu stránku alebo naše sociálne siete. Tešíme sa na teba."
 	}
 }

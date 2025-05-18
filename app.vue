@@ -1,7 +1,6 @@
 <script setup>
 	// @todo animacie
 	// @todo logo
-	// @todo pridat datum a cas a odpocitavadlo
 
 	import 'primeicons/primeicons.css'
 
