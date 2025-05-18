@@ -1,6 +1,7 @@
 <script setup>
 	const i18n = useI18n()
 	const { data: RegistrationSection }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/registration`).first())
+	const { data: Global }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/global`).first())
 </script>
 
 <template>
@@ -9,7 +10,7 @@
 		<section class="text">
 			<p v-for="paragraph in RegistrationSection.body.text" :key="paragraph">{{ paragraph }}</p>
 		</section>
-		<a class="registration-button" :href="RegistrationSection.body.button.url">{{ RegistrationSection.body.button.label }}</a>
+		<a :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
 	</section>
 </template>
 

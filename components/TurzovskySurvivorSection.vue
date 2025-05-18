@@ -1,6 +1,7 @@
 <script setup>
 	const i18n = useI18n()
 	const { data: TurzovskySurvivorSection }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/sections/turzovsky-survivor`).first())
+	const { data: Global }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/global`).first())
 </script>
 
 <template>
@@ -13,7 +14,7 @@
 				</article>
 			</section>
 		</section>
-		<a class="registration-button" :href="TurzovskySurvivorSection.body.button.url">{{ TurzovskySurvivorSection.body.button.label }}</a>
+		<a :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
 	</section>
 </template>
 

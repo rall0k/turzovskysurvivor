@@ -1,5 +1,4 @@
 <script setup>
-	// @todo link na registraciu
 	// @todo animacie
 	// @todo logo
 	// @todo pridat datum a cas a odpocitavadlo

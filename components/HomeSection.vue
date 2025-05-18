@@ -13,7 +13,7 @@
 			<section class="text">
 				<p v-for="paragraph in HomeSection.body.text" :key="paragraph">{{ paragraph }}</p>
 			</section>
-			<a :href="HomeSection.body.button.url" class="registration-button">{{ HomeSection.body.button.label }}</a>
+			<a :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
 		</section>
 		<img :src="HomeSection.body.photo" alt="">
 	</section>
