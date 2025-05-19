@@ -90,7 +90,7 @@
 
 <template>
 	<header :class="{'header-app': true, 'scrolled': isScrolled}">
-		<a href="#home" class="logo">
+		<a href="/#home" class="logo">
 			 <i class="fa-brands fa-gripfire"></i>
 			 {{ Global.body.name }}
 		</a>
