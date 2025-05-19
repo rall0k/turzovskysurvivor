@@ -43,6 +43,15 @@
 			}
 		]
 	})
+	const navigate = (anchor) => {
+		const el = document.getElementById(anchor)
+		if (el) {
+			el.scrollIntoView({ behavior: 'smooth' })
+			activeSection.value = anchor
+			history.replaceState(null, null, `#${anchor}`)
+		}
+		menu.value.hide()
+	}
 
 	const isScrolled = ref(false)
 
@@ -90,16 +99,16 @@
 
 <template>
 	<header :class="{'header-app': true, 'scrolled': isScrolled}">
-		<NuxtLink to="#home" class="logo">
+		<span @click="navigate('home')" class="logo">
 			 <i class="fa-brands fa-gripfire"></i>
 			 {{ Global.body.name }}
-		</NuxtLink>
+		</span>
 
 		<Button class="hamburger-menu-icon" type="alternate" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
 		<Menu ref="menu" id="overlay_menu" :model="navigation" :popup="true" />
 
 		<nav>
-			<NuxtLink :to="`#${item.anchor}`" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</NuxtLink>
+			<span @click="navigate(item.anchor)" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</span>
 		</nav>
 	</header>
 </template>
