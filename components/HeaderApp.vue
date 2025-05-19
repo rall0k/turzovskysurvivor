@@ -69,24 +69,59 @@
 
 	const activeSection = ref(null)
 
+	let scrollTimeout = null
+
 	const onScroll = () => {
-		const sections = [ 'survivor', 'turzovskysurvivor', 'registration', 'contact' ]
-		for (const id of sections) {
-			const el = document.getElementById(id)
-			if (!el) continue
-			const rect = el.getBoundingClientRect()
-			// kontrolujeme, či je časť sekcie blízko hornej časti viewportu
-			if (rect.top <= 110 && rect.bottom >= 110) {
-				activeSection.value = id
-				history.replaceState(null, null, `#${id}`)
-				break
+		if (scrollTimeout) clearTimeout(scrollTimeout)
+
+		scrollTimeout = setTimeout(() => {
+			const sectionIds = ['survivor', 'turzovskysurvivor', 'registration', 'contact']
+			let found = false
+
+			for (const id of sectionIds) {
+				const el = document.getElementById(id)
+				if (!el) continue
+
+				const rect = el.getBoundingClientRect()
+
+				// podmienka: časť sekcie musí byť v dohľade
+				if (rect.top <= 110 && rect.bottom >= 110) {
+					if (activeSection.value !== id) {
+						activeSection.value = id
+						history.replaceState(null, '', `#${id}`)
+					}
+					found = true
+					break
+				}
 			}
-			else {
+
+			// ak sa nenašla žiadna aktívna sekcia
+			if (!found && activeSection.value !== null) {
 				activeSection.value = null
-				history.replaceState(null, null, `#`)
+				history.replaceState(null, '', '#')
 			}
-		}
+		}, 100)
 	}
+
+
+	// const onScroll = () => {
+	// 	const sections = [ 'survivor', 'turzovskysurvivor', 'registration', 'contact' ]
+	// 	for (const id of sections) {
+	// 		const el = document.getElementById(id)
+	// 		if (!el) continue
+	// 		const rect = el.getBoundingClientRect()
+	// 		// kontrolujeme, či je časť sekcie blízko hornej časti viewportu
+	// 		if (rect.top <= 110 && rect.bottom >= 110) {
+	// 			activeSection.value = id
+	// 			history.replaceState(null, null, `#${id}`)
+	// 			break
+	// 		}
+	// 		else {
+	// 			activeSection.value = null
+	// 			history.replaceState(null, null, `#`)
+	// 		}
+	// 	}
+	// }
 	onMounted(() => {
 		window.addEventListener('scroll', onScroll)
 		onScroll() // kontrola hneď po načítaní
