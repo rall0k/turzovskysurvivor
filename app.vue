@@ -104,8 +104,7 @@
 		}
 	}
 	.container {
-		overflow: hidden;
-		scroll-margin-top: 108px;
+		scroll-margin-top: 100px;
 		min-height: 100vh;
 		padding: 5rem;
 		color: var(--color01);
@@ -114,5 +113,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+
+		.wrap {
+			overflow: hidden;
+		}
 	}
 </style>

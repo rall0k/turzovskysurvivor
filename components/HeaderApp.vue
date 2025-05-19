@@ -44,7 +44,6 @@
 		]
 	})
 
-
 	const isScrolled = ref(false)
 
 	const handleScroll = () => {

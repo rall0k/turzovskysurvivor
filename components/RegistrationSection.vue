@@ -7,21 +7,27 @@
 
 <template>
 	<section v-if="Global.body.registrationAllow && registrationCountdown" class="container" :id="RegistrationSection.body.anchor" :style="`background: radial-gradient(circle, ${RegistrationSection.body.colors.background.center}, ${RegistrationSection.body.colors.background.edge})`">
-		<h1 data-aos="fade-left" data-aos-duration="1500">{{ RegistrationSection.body.title }}</h1>
-		<section class="text">
-			<p v-for="paragraph in RegistrationSection.body.text" :key="paragraph" data-aos="fade-right" data-aos-duration="1500">{{ paragraph }}</p>
-			<p data-aos="fade-right" data-aos-duration="1500">{{ RegistrationSection.body.registrationText }} <span class="registration-countdown">{{ registrationCountdown }}</span></p>
+		<section class="wrap">
+			<section class="title-text">
+				<h1 data-aos="fade-left" data-aos-duration="1500">{{ RegistrationSection.body.title }}</h1>
+				<section class="text">
+					<p v-for="paragraph in RegistrationSection.body.text" :key="paragraph" data-aos="fade-right" data-aos-duration="1500">{{ paragraph }}</p>
+					<p data-aos="fade-right" data-aos-duration="1500">{{ RegistrationSection.body.registrationText }} <span class="registration-countdown">{{ registrationCountdown }}</span></p>
+				</section>
+			</section>
+			<a  data-aos="fade" data-aos-duration="1500" :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
 		</section>
-		<a  data-aos="fade" data-aos-duration="1500" :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
 	</section>
 	<section v-if="!Global.body.registrationAllow || !registrationCountdown" class="container registration-disabled" :id="RegistrationSection.body.anchor" :style="`background: radial-gradient(circle, ${RegistrationSection.body.colors.background.center}, ${RegistrationSection.body.colors.background.edge})`">
-		<h1 data-aos="fade-left" data-aos-duration="1500">{{ RegistrationSection.body.registrationDisabled.title }}</h1>
-		<p class="text" data-aos="fade-right" data-aos-duration="1500">{{ RegistrationSection.body.registrationDisabled.text }}</p>
+		<section class="wrap">
+			<h1 data-aos="fade-left" data-aos-duration="1500">{{ RegistrationSection.body.registrationDisabled.title }}</h1>
+			<p class="text" data-aos="fade-right" data-aos-duration="1500">{{ RegistrationSection.body.registrationDisabled.text }}</p>
+		</section>
 	</section>
 </template>
 
 <style scoped>
-	.container {
+	.wrap {
 		display: flex;
 		flex-direction: column;
 		gap: 4rem;
@@ -29,7 +35,11 @@
 		&.registration-disabled {
 			gap: 2rem;
 		}
-
+		.title-text {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
 		h1 {}
 		.text {
 			display: flex;

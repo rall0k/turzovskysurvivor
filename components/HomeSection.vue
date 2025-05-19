@@ -43,6 +43,9 @@
 		@media(min-width: 1400px) {
 			flex-direction: row;
 		}
+		@media(min-width: 1800px) {
+			justify-content: center;
+		}
 
 		.text-button {
 			display: flex;
@@ -54,7 +57,9 @@
 			@media(min-width: 1400px) {
 				order: 1;
 			}
-			
+			@media(min-width: 1800px) {
+				width: 100vh;
+			}
 			.text {
 				display: flex;
 				flex-direction: column;
