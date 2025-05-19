@@ -58,12 +58,12 @@
 			// kontrolujeme, či je časť sekcie blízko hornej časti viewportu
 			if (rect.top <= 110 && rect.bottom >= 110) {
 				activeSection.value = id
-				history.replaceState(null, null, `${useRuntimeConfig().app.baseURL}#${id}`)
+				history.replaceState(null, null, `#${id}`)
 				break
 			}
 			else {
 				activeSection.value = null
-				history.replaceState(null, null, `${useRuntimeConfig().app.baseURL}#`)
+				history.replaceState(null, null, `#`)
 			}
 		}
 	}
