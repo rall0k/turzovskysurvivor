@@ -27,6 +27,7 @@
 					command: () => {
 						router.replace({ hash: `#${sections[item].value.body.anchor}` })
 						window.location.href = `${window.location.origin}#${sections[item].value.body.anchor}`
+						console.log(window)
 					}
 				}))
 			}
@@ -88,7 +89,7 @@
 		<Menu ref="menu" id="overlay_menu" :model="navigation" :popup="true" />
 
 		<nav>
-			<a :href="`${useRuntimeConfig().app.baseURL}#${item.anchor}`" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</a>
+			<a :href="`#${item.anchor}`" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</a>
 		</nav>
 	</header>
 </template>
