@@ -15,7 +15,7 @@
 					<p data-aos="fade-right" data-aos-duration="1500">{{ RegistrationSection.body.registrationText }} <span class="registration-countdown">{{ registrationCountdown }}</span></p>
 				</section>
 			</section>
-			<a  data-aos="fade" data-aos-duration="1500" :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
+			<a data-aos="fade" data-aos-duration="1500" :href="Global.body.registrationButton.url" target="__blank" class="registration-button">{{ Global.body.registrationButton.label }}</a>
 		</section>
 	</section>
 	<section v-if="!Global.body.registrationAllow || !registrationCountdown" class="container registration-disabled" :id="RegistrationSection.body.anchor" :style="`background: radial-gradient(circle, ${RegistrationSection.body.colors.background.center}, ${RegistrationSection.body.colors.background.edge})`">

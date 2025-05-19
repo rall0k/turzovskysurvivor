@@ -1,5 +1,4 @@
 <script setup>
-	// @todo fix menu klikacka nefunguje na github pages 
 	import 'primeicons/primeicons.css'
 
 	const i18n = useI18n()

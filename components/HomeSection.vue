@@ -15,7 +15,7 @@
 			</section>
 			<section class="registration-container" v-if="Global.body.registrationAllow && registrationCountdown">
 				<p>{{ HomeSection.body.registrationText }} <span class="registration-countdown">{{ registrationCountdown }}</span></p>
-				<a :href="Global.body.registrationButton.url" class="registration-button">{{ Global.body.registrationButton.label }}</a>
+				<a :href="Global.body.registrationButton.url" target="__blank" class="registration-button">{{ Global.body.registrationButton.label }}</a>
 			</section>
 		</section>
 		<section class="event-container">

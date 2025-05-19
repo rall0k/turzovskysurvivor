@@ -21,7 +21,7 @@
 					</div>
 				</section>
 			</section>
-			<a  data-aos="fade" data-aos-duration="1500" :href="Global.body.registrationButton.url" class="registration-button" v-if="Global.body.registrationAllow && registrationCountdown">{{ Global.body.registrationButton.label }}</a>
+			<a data-aos="fade" data-aos-duration="1500" :href="Global.body.registrationButton.url" target="__blank" class="registration-button" v-if="Global.body.registrationAllow && registrationCountdown">{{ Global.body.registrationButton.label }}</a>
 		</section>
 	</section>
 </template>
