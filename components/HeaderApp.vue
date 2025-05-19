@@ -113,6 +113,12 @@
 		font-size: 1.4rem;
 		color: #444;
 	}
+	.p-button {
+		&:hover {
+			background: none;
+			border: none;
+		}
+	}
 </style>
 
 <style scoped>
