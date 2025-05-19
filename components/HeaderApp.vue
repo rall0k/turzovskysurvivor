@@ -99,16 +99,17 @@
 
 <template>
 	<header :class="{'header-app': true, 'scrolled': isScrolled}">
-		<span @click="navigate('home')" class="logo">
+		<span @click="navigate('home')" class="logo menu-item">
 			 <i class="fa-brands fa-gripfire"></i>
 			 {{ Global.body.name }}
 		</span>
 
-		<Button class="hamburger-menu-icon" type="alternate" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
+		<!-- <Button class="hamburger-menu-icon" type="alternate" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" /> -->
+		<span class="hamburger-menu-icon pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu"></span>
 		<Menu ref="menu" id="overlay_menu" :model="navigation" :popup="true" />
 
 		<nav>
-			<span @click="navigate(item.anchor)" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</span>
+			<span @click="navigate(item.anchor)" :class="{ 'active': item.anchor == activeSection, 'menu-item': true }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</span>
 		</nav>
 	</header>
 </template>
@@ -160,7 +161,7 @@
 			padding: 2rem 5rem;
 		}
 
-		span {
+		.menu-item {
 			display: inline-block;
 			text-decoration: none;
 			font-size: 1.4rem;
@@ -183,6 +184,11 @@
 		.hamburger-menu-icon {
 			background: none;
 			border: none;
+			color: var(--color01);
+
+			&:hover {
+				cursor: pointer;
+			}
 
 			@media(min-width: 1200px) {
 				display: none;
