@@ -90,16 +90,16 @@
 
 <template>
 	<header :class="{'header-app': true, 'scrolled': isScrolled}">
-		<a href="/#home" class="logo">
+		<NuxtLink to="#home" class="logo">
 			 <i class="fa-brands fa-gripfire"></i>
 			 {{ Global.body.name }}
-		</a>
+		</NuxtLink>
 
 		<Button class="hamburger-menu-icon" type="alternate" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
 		<Menu ref="menu" id="overlay_menu" :model="navigation" :popup="true" />
 
 		<nav>
-			<a :href="`#${item.anchor}`" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</a>
+			<NuxtLink :to="`#${item.anchor}`" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</NuxtLink>
 		</nav>
 	</header>
 </template>
