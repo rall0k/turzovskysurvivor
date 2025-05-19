@@ -1,1 +1,0 @@
-import t from"./hLHjXnzC.js";import"./C710dlCM.js";import"./DDUj0IkK.js";import"./BO1YxuWT.js";import"./C-9gRi0X.js";import"./Brl4wuFH.js";import"./CxjS2Ih_.js";import"./Dxm-l1QO.js";import"./YXvZgr9C.js";var d={name:"Calendar",extends:t,mounted:function(){console.warn("Deprecated since v4. Use DatePicker component instead.")}};export{d as default};
