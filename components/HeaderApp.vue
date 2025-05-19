@@ -22,17 +22,28 @@
 
 		return [
 			{
-				items: HeaderApp.value.body.menu.map((item) => ({
-					...sections[item].value.body,
-					command: () => {
-						router.replace({ hash: `#${sections[item].value.body.anchor}` })
-						window.location.href = `${window.location.origin}${useRuntimeConfig().app.baseURL}#${sections[item].value.body.anchor}`
-						console.log(window)
+				items: HeaderApp.value.body.menu.map((item) => {
+					const anchor = sections[item]?.value?.body?.anchor || ''
+					const label = sections[item]?.value?.body?.label || item
+
+					return {
+						label,
+						anchor,
+						command: () => {
+							const el = document.getElementById(anchor)
+							if (el) {
+								el.scrollIntoView({ behavior: 'smooth' })
+								activeSection.value = anchor
+								history.replaceState(null, null, `#${anchor}`)
+							}
+							menu.value.hide()
+						}
 					}
-				}))
+				})
 			}
 		]
 	})
+
 
 	const isScrolled = ref(false)
 
