@@ -35,11 +35,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 4rem;
-		padding: 2rem;
-
-		@media(min-width: 600px) {
-			padding: 5rem;
-		}
+		
 		@media(min-width: 1400px) {
 			flex-direction: row;
 		}

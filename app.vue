@@ -106,13 +106,17 @@
 	.container {
 		scroll-margin-top: 100px;
 		min-height: 100vh;
-		padding: 5rem;
 		color: var(--color01);
 		background-position: center center;
 		background-size: cover;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		padding: 5rem 3rem;
+
+		@media(min-width: 600px) {
+			padding: 5rem;
+		}
 
 		.wrap {
 			overflow: hidden;
