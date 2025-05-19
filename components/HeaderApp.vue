@@ -58,12 +58,12 @@
 			// kontrolujeme, či je časť sekcie blízko hornej časti viewportu
 			if (rect.top <= 110 && rect.bottom >= 110) {
 				activeSection.value = id
-				history.replaceState(null, null, `#${id}`)
+				history.replaceState(null, null, `${useRuntimeConfig().app.baseURL}#${id}`)
 				break
 			}
 			else {
 				activeSection.value = null
-				history.replaceState(null, null, '#')
+				history.replaceState(null, null, `${useRuntimeConfig().app.baseURL}#`)
 			}
 		}
 	}
@@ -88,7 +88,7 @@
 		<Menu ref="menu" id="overlay_menu" :model="navigation" :popup="true" />
 
 		<nav>
-			<a :href="`#${item.anchor}`" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</a>
+			<a :href="`${useRuntimeConfig().app.baseURL}#${item.anchor}`" :class="{ 'active': item.anchor == activeSection }" v-for="item in navigation[0].items" :key="item">{{ item.label }}</a>
 		</nav>
 	</header>
 </template>
