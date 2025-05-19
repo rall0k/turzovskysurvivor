@@ -26,7 +26,7 @@
 					...sections[item].value.body,
 					command: () => {
 						router.replace({ hash: `#${sections[item].value.body.anchor}` })
-						window.location.href = `${window.location.origin}#${sections[item].value.body.anchor}`
+						// window.location.href = `${window.location.origin}#${sections[item].value.body.anchor}`
 						console.log(window)
 					}
 				}))
