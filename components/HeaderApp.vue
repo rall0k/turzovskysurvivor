@@ -160,7 +160,7 @@
 			padding: 2rem 5rem;
 		}
 
-		a {
+		span {
 			display: inline-block;
 			text-decoration: none;
 			font-size: 1.4rem;
