@@ -193,7 +193,7 @@
 				gap: .3rem;
 			}
 
-			a {
+			span {
 				padding: .4rem 1.5rem;
 				border-radius: 5rem;
 				transition: 250ms;
