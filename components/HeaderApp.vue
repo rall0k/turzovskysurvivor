@@ -175,6 +175,10 @@
 				font-size: 2rem;
 				animation: flame 3s infinite ease-in-out;
 			}
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 		.hamburger-menu-icon {
 			background: none;
@@ -199,6 +203,7 @@
 				transition: 250ms;
 
 				&.active, &:hover {
+					cursor: pointer;
 					background: rgba(255, 255, 255, .3);
 				}
 			}
