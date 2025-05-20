@@ -30,13 +30,7 @@
 						label,
 						anchor,
 						command: () => {
-							const el = document.getElementById(anchor)
-							if (el) {
-								el.scrollIntoView({ behavior: 'smooth' })
-								activeSection.value = anchor
-								history.replaceState(null, null, `#${anchor}`)
-							}
-							menu.value.hide()
+							navigate(anchor)
 						}
 					}
 				})
@@ -102,25 +96,6 @@
 		}, 100)
 	}
 
-
-	// const onScroll = () => {
-	// 	const sections = [ 'survivor', 'turzovskysurvivor', 'registration', 'contact' ]
-	// 	for (const id of sections) {
-	// 		const el = document.getElementById(id)
-	// 		if (!el) continue
-	// 		const rect = el.getBoundingClientRect()
-	// 		// kontrolujeme, či je časť sekcie blízko hornej časti viewportu
-	// 		if (rect.top <= 110 && rect.bottom >= 110) {
-	// 			activeSection.value = id
-	// 			history.replaceState(null, null, `#${id}`)
-	// 			break
-	// 		}
-	// 		else {
-	// 			activeSection.value = null
-	// 			history.replaceState(null, null, `#`)
-	// 		}
-	// 	}
-	// }
 	onMounted(() => {
 		window.addEventListener('scroll', onScroll)
 		onScroll() // kontrola hneď po načítaní
