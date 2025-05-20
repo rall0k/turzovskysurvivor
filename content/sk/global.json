@@ -5,7 +5,7 @@
 		"description": "Zaži dobrodružstvo na vlastnej koži! Turzovský Survivor je adrenalínová súťaž v prírode, plná výziev, fyzických úloh a logických hier. Prihlás sa ešte dnes a staň sa víťazom!",
 		"keywords": "logické výzvy, fyzické výzvy, šikovnosť, turzovský survivor, survivor, gelnica, penzión turzov, areál turzov, jazero, turzovské jazero"
 	},
-	"background": "/layout/global/background.png",
+	"background": "layout/global/background.png",
 	"registrationButton": {
 		"label": "Registrácia",
 		"url": "https://forms.gle/STn1G4CaTmyCaKuk9"

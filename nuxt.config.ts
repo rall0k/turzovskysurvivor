@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 	target: 'static',
 	runtimeConfig: {
     public: {
-			siteUrl: 'https://rall0k.github.io/'
+			siteUrl: 'https://rall0k.github.io'
 		}
 	},
 	app: {
