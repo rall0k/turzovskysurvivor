@@ -20,13 +20,12 @@
 			}
 		]
 	})
-
 	useSeoMeta({
 		title: Global.value.body.seo.title,
 		ogTitle: Global.value.body.seo.title,
 		description: Global.value.body.seo.description,
 		ogDescription: Global.value.body.seo.description,
-		ogImage: Global.value.body.background,
+		ogImage: `${useRuntimeConfig().public.siteUrl}${useRuntimeConfig().app.baseURL}${Global?.value?.body?.background}`,
 	})
 
 	const { data: headerapp }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/layout/header-app`).first())

@@ -4,6 +4,11 @@ import Material from '@primeuix/themes/material'
 export default defineNuxtConfig({
 	ssr: true,
 	target: 'static',
+	runtimeConfig: {
+    public: {
+			siteUrl: 'https://rall0k.github.io/'
+		}
+	},
 	app: {
 		baseURL: process.env.NODE_ENV === 'production' ? '/turzovskysurvivor/' : ''
 	},
