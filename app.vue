@@ -43,7 +43,6 @@
 </script>
 
 <template>
-	{{ `${useRuntimeConfig().public.siteUrl}${useRuntimeConfig().app.baseURL}${Global.body.ogImage}` }}
 	<main :style="`background-image: url('${useRuntimeConfig().app.baseURL}${Global.body.background}')`">
 		<HeaderApp />
 		<HomeSection />
