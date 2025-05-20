@@ -73,9 +73,8 @@
 
 	const onScroll = () => {
 		if (scrollTimeout) clearTimeout(scrollTimeout)
-
 		scrollTimeout = setTimeout(() => {
-			const sectionIds = ['survivor', 'turzovskysurvivor', 'registration', 'contact']
+			const sectionIds = HeaderApp.value.body.menu
 			let found = false
 
 			for (const id of sectionIds) {
