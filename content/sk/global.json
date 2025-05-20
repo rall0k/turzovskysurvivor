@@ -6,6 +6,7 @@
 		"keywords": "logické výzvy, fyzické výzvy, šikovnosť, turzovský survivor, survivor, gelnica, penzión turzov, areál turzov, jazero, turzovské jazero"
 	},
 	"background": "layout/global/background.png",
+	"ogImage": "ogImage.jpg",
 	"registrationButton": {
 		"label": "Registrácia",
 		"url": "https://forms.gle/STn1G4CaTmyCaKuk9"

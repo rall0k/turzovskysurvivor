@@ -25,7 +25,7 @@
 		ogTitle: Global.value.body.seo.title,
 		description: Global.value.body.seo.description,
 		ogDescription: Global.value.body.seo.description,
-		ogImage: `${useRuntimeConfig().public.siteUrl}${useRuntimeConfig().app.baseURL}${Global.value.body.background}`,
+		ogImage: `${useRuntimeConfig().public.siteUrl}${useRuntimeConfig().app.baseURL}${Global.value.body.ogImage}`,
 	})
 
 	const { data: headerapp }  = await useAsyncData(() => queryCollection('content').path(`/${i18n.locale.value}/layout/header-app`).first())
@@ -43,7 +43,7 @@
 </script>
 
 <template>
-	{{ `${useRuntimeConfig().public.siteUrl}${useRuntimeConfig().app.baseURL}${Global.body.background}` }}
+	{{ `${useRuntimeConfig().public.siteUrl}${useRuntimeConfig().app.baseURL}${Global.body.ogImage}` }}
 	<main :style="`background-image: url('${useRuntimeConfig().app.baseURL}${Global.body.background}')`">
 		<HeaderApp />
 		<HomeSection />
